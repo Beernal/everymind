@@ -30,7 +30,7 @@ app.post('/auth/register', async(req,res) =>{
 
     const {name, email,password,confirmpassword} = req.body
 
-    //Validação de registro
+    // Validação de registro
     if(!name){
         return res.status(422).json({msg:'O nome é obrigatório!'})
 
@@ -76,10 +76,10 @@ app.post('/auth/register', async(req,res) =>{
 // Pagina de login 
 app.post("/auth/login", async (req,res)=> {
 
-    //Variáveis que deve receber no front 
+    
     const{email,password}= req.body
 
-    //Validar e-mail se já existe na base de dados
+    //Validar e-mail != null
     if(!email){
         return res.status(422).json({msg:'O email é obrigatório!'})
 
